@@ -1,4 +1,5 @@
 (https://github.com/Meryemsener)
+<img src="https://images.app.goo.gl/BPAwVULfuiJvYZn66"/>
 
 ## **_Meryem Sener_**
 <dl>
@@ -9,14 +10,14 @@
   <dd>Gender: Female</dd>
   <dd>Marital Status: To married (two kids)</dd>
   </dl>
-</h>
+<hr/>
 
 ## **_Educational Background_**
 I graduated from the department of sociology.
 I master degree is Political Science and International Relations.
 I received family counseling.
 My native languages are complicated.Kurdish, Turkish and Zazaki are my native languages.I am learning Dutch.
-</h>
+<hr/>
 
 ## **_I like_**
 
