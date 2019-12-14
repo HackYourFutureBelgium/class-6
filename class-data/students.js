@@ -25,10 +25,6 @@ const students = [
     userName: 'yavuzugurtas',
   },
   {
-    name: 'Ahed',
-    userName: 'aahedd',
-  },
-  {
     name: 'akbel colak',
     userName: 'akbelcolak',
   },
@@ -51,6 +47,14 @@ const students = [
   {
     name: 'ufuk uysal',
     userName: 'u-uysal',
+  },
+  {
+    name: 'Mohanad',
+    userName: 'Mohanad-Abdalradi',
+  },
+  {
+    name: 'Hamdan',
+    userName: 'hamdan-99',
   }
 ];
 

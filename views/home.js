@@ -39,6 +39,18 @@ function renderHome(modules, students) {
 
       const newLi = document.createElement('li');
       newLi.appendChild(moduleViewButton);
+      if (typeof module.projectNumber === 'number') {
+
+        const projectBoardButton = document.createElement('button');
+        projectBoardButton.innerHTML = 'Homework Project Board';
+
+        const pbA = document.createElement('a');
+        pbA.target = '_blank';
+        pbA.href = "https://github.com/HackYourFutureBelgium/class-6/projects/" + module.projectNumber;
+        pbA.appendChild(projectBoardButton);
+
+        newLi.appendChild(pbA);
+      }
 
       return newLi;
     })

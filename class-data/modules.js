@@ -12,7 +12,8 @@ const modules = [
           'homework/week-2-project',
           'homework/week-3-project',
           'homework/module-exercises',
-        ]
+        ],
+        live: true,
       }
     ]
   },
@@ -27,7 +28,8 @@ const modules = [
           'week-2-project',
           'week-3-project',
           'module-exercises',
-        ]
+        ],
+        live: true,
       }
     ]
   },
@@ -41,13 +43,15 @@ const modules = [
           'week-1-project',
           'week-2-project',
           'week-3-project',
-        ]
+        ],
+        live: true,
       }
     ]
   },
   {
     name: 'javascript 3',
-    status: 'in progress',
+    projectNumber: 1,
+    status: 'complete',
     repos: [
       {
         name: 'javascript-3',
@@ -58,20 +62,70 @@ const modules = [
           'fetching-data',
           'closure',
           'classes'
-        ]
+        ],
+        live: true,
       },
       {
-        name: 'practical-javascript'
+        name: 'practical-javascript',
+        live: true,
+      },
+      {
+        name: 'github-api-crash-course',
+        live: true,
       }
     ]
   },
   {
     name: 'Node JS',
-    status: 'to do',
+    status: 'in progress',
+    projectNumber: 2,
     repos: [
       {
-        name: 'node.js',
+        name: 'javascript-exercises',
+        live: false,
+        type: 'Exercises',
+        paths: {
+          paths: [
+            'helloWorld/report.txt',
+            'repeatString/report.txt',
+            'reverseString/report.txt',
+            'tempConversion/report.txt',
+            'getTheTitles/report.txt',
+            'findTheOldest/report.txt',
+            'calculator/report.txt',
+          ],
+          render: (username, repo, path) => {
+            path = path ? path : '';
+            fetch(`https://${username}.github.io/${repo}/${path}`)
+              .then(resp => resp.text())
+              .then(report => {
+                console.group(`${username}: ${repo}/${path}`)
+                console.log(report);
+                console.groupEnd();
+              })
+              .catch(err => console.log(err));
+          }
+        }
       },
+      {
+        name: 'pokedex-api',
+        live: true,
+        type: 'Project',
+        paths: {
+          paths: ['functions/report.json'],
+          render: (username, repo, path) => {
+            path = path ? path : '';
+            fetch(`https://${username}.github.io/${repo}/${path}`)
+              .then(resp => resp.json())
+              .then(report => {
+                console.group(`${username}: ${repo}/${path}`)
+                console.log(report);
+                console.groupEnd();
+              })
+              .catch(err => console.log(err));
+          }
+        }
+      }
     ]
   },
 ]

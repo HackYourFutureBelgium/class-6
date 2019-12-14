@@ -22,10 +22,6 @@ function renderStudent(student, modules) {
   portfolioLink.target = '_blank';
   portfolioLink.appendChild(portfolioButton);
 
-  // once md bios have standardized names
-  // and they build un.gh.io portfolios in module 0
-  // buttons to those can be put here
-
   const modulesUl = modules
     .map(module => {
       if (module.status === 'to do') return document.createElement('div');
@@ -41,14 +37,14 @@ function renderStudent(student, modules) {
 
       const reposUl = module.repos
         .map(repo => {
-
           const li = document.createElement('li');
           li.appendChild(header);
-          li.appendChild(renderRepo(repo, student));
+          li.appendChild(renderRepo(student, repo));
           return li;
         })
         .reduce((ul, li) => {
           ul.appendChild(li);
+          ul.appendChild(document.createElement('br'));
           return ul;
         }, document.createElement('ul'))
 

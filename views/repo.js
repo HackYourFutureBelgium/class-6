@@ -1,26 +1,50 @@
-function renderRepo(repo, student) {
-  const header = renderLinkButtons(repo.name, student.userName, repo.name);
 
-  const pathsList = repo.paths
-    ? repo.paths
+function renderRepo(student, repo) {
+  const headerString = repo.name + ' : ' + (
+    repo.hasOwnProperty('type')
+      ? ' (' + repo.type + ') '
+      : ''
+  );
+
+  const repoText = document.createTextNode(headerString);
+
+  const repoList = document.createElement('li');
+
+  const render = typeof repo.render === 'function'
+    ? repo.render
+    : null;
+
+  repoList.appendChild(repoText);
+  repoList.appendChild(renderLinkButtons(student, repo, null, render))
+
+  if (repo.paths) {
+
+    const paths = repo.paths instanceof Array
+      ? repo.paths
+      : repo.paths.paths;
+
+    const render = typeof repo.paths.render === 'function'
+      ? repo.paths.render
+      : null;
+
+    const pathsList = paths
       .map(path => {
-        const links = renderLinkButtons(path, student.userName, repo.name, path);
+
+        const pathText = document.createTextNode(path + ' : ');
+
         const li = document.createElement('li');
-        li.appendChild(links);
+        li.appendChild(pathText);
+        li.appendChild(renderLinkButtons(student, repo, path, render))
         return li;
       })
       .reduce((ul, li) => {
         ul.appendChild(li);
         return ul;
-      }, document.createElement('ul'))
-    : document.createElement('div');
+      }, document.createElement('ul'));
 
-  const container = document.createElement('div');
-  container.appendChild(header);
-  container.appendChild(pathsList);
+    repoList.appendChild(pathsList);
+  }
 
-  return container;
-
+  return repoList;
 }
-
 
