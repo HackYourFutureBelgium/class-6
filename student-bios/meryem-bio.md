@@ -16,7 +16,7 @@
 I graduated from the department of sociology.
 I master degree is Political Science and International Relations.
 I received family counseling.
-My native languages are complicated.Kurdish, Turkish and Zazaki are my native languages.I am learning Dutch.
+My native languages are complicated.Kurdish, Turkish and Zazaki are my native languages. I can speak also Duits and Englis. 
 <hr/>
 
 ## **_I like_**
